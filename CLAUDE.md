@@ -198,6 +198,41 @@ Consumer must have Tailwind v4 with matching CSS variables defined in their `@th
 | Tabs | Done | Yes | Section switching |
 | Table | Done | No | Data tables, compound |
 
+## Future Components
+
+| Component | Base UI | Priority | Description |
+|-----------|---------|----------|-------------|
+| Tooltip | Yes | High | Hover hints, keyboard accessible |
+| Popover | Yes | High | Floating content panels |
+| Switch | Yes | High | Toggle on/off |
+| Checkbox | Yes | Medium | Form checkbox with label |
+| Radio | Yes | Medium | Radio button groups |
+| Avatar | No | Medium | User avatars with fallback |
+| Separator | No | Low | Horizontal/vertical dividers |
+| Skeleton | No | Low | Loading placeholders |
+| Toast | Yes | Low | Notifications (requires provider) |
+| Accordion | Yes | Low | Collapsible sections |
+| Alert | No | Low | Inline alerts/callouts |
+| Progress | Yes | Low | Progress bars |
+| Slider | Yes | Low | Range input |
+| Combobox | Yes | Low | Autocomplete/searchable select |
+
+### Implementation Notes
+
+**Tooltip** - Use `@base-ui-components/react/tooltip`. Simple hover trigger with positioned content.
+
+**Popover** - Use `@base-ui-components/react/popover`. Like Dialog but non-modal, triggered inline.
+
+**Switch** - Use `@base-ui-components/react/switch`. Binary toggle, style as pill shape.
+
+**Checkbox/Radio** - Use Base UI primitives. Include proper label association.
+
+**Toast** - Use `@base-ui-components/react/toast`. Requires ToastProvider at app root.
+
+**Avatar** - No Base UI needed. Image with initials fallback.
+
+**Skeleton** - No Base UI needed. Animated placeholder divs.
+
 ## Notes
 
 - This is React-only (no Svelte version yet)
