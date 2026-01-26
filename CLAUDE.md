@@ -185,16 +185,22 @@ Consumer must have Tailwind v4 with matching CSS variables defined in their `@th
 
 ## Components
 
-| Component | Status | Base UI |
-|-----------|--------|---------|
-| Button | Done | No (native) |
-| Input | Done | Yes |
-| Select | Todo | Yes |
-| Dialog | Todo | Yes |
-| Menu | Todo | Yes |
-| Tabs | Todo | Yes |
-| Badge | Todo | No |
-| Card | Todo | No |
+| Component | Status | Base UI | Priority | Notes |
+|-----------|--------|---------|----------|-------|
+| Button | Done | No | - | Native button, cva variants |
+| Input | Done | Yes | - | Text input with variants |
+| Badge | Todo | No | 1 | Status indicators (live/draft) |
+| Textarea | Todo | Yes | 2 | AI chat, content editing |
+| Select | Todo | Yes | 3 | Form dropdowns |
+| Card | Todo | No | 4 | Content containers |
+| Dialog | Todo | Yes | 5 | Modals, confirmations |
+| Menu | Todo | Yes | 6 | Dropdown actions |
+| Tabs | Todo | Yes | 7 | Section switching |
+
+### Implementation Groups (can parallelize)
+
+**Group A (no Base UI):** Badge, Card
+**Group B (Base UI):** Textarea, Select, Dialog, Menu, Tabs
 
 ## Notes
 
