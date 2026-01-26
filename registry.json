@@ -85,6 +85,34 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Card with compound components (Header, Content, Footer, Title, Description). Elevated variant adds hover shadow.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/card/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Select dropdown built on Base UI with default and ghost variants.",
+      "dependencies": ["@base-ui-components/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/select/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
