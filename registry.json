@@ -155,6 +155,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Data table with Header, Body, Row, Head, Cell, Footer, and Caption components.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/table/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
