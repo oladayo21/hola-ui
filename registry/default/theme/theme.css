@@ -1,0 +1,51 @@
+/* hola-ui default theme - dark, flat, muted teal */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap');
+
+@theme {
+  --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+
+  /* Backgrounds */
+  --color-bg-primary: #101012;
+  --color-bg-secondary: #18181a;
+  --color-bg-tertiary: #222225;
+  --color-bg-elevated: #2c2c30;
+
+  /* Borders */
+  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  --color-border-default: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.12);
+
+  /* Text */
+  --color-text-primary: #eaeaea;
+  --color-text-secondary: #9a9a9e;
+  --color-text-tertiary: #6a6a70;
+  --color-text-muted: #4a4a50;
+
+  /* Accent - muted teal */
+  --color-accent: #5a9a92;
+  --color-accent-soft: rgba(90, 154, 146, 0.12);
+  --color-accent-hover: #6baba3;
+  --color-accent-text: #101012;
+
+  /* Status */
+  --color-live: #5a9a7c;
+  --color-live-soft: rgba(90, 154, 124, 0.12);
+  --color-draft: #b89a5a;
+  --color-draft-soft: rgba(184, 154, 90, 0.12);
+
+  /* Flat radius */
+  --radius-sm: 1px;
+  --radius-md: 2px;
+  --radius-lg: 2px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}

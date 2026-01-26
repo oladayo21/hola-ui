@@ -4,10 +4,39 @@
   "homepage": "https://github.com/oladayo21/hola-ui",
   "items": [
     {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "Utilities",
+      "description": "cn helper for class merging (clsx + tailwind-merge).",
+      "dependencies": ["clsx", "tailwind-merge"],
+      "files": [
+        {
+          "path": "registry/default/utils/cn.ts",
+          "type": "registry:lib",
+          "target": "lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "theme",
+      "type": "registry:file",
+      "title": "Theme",
+      "description": "Default hola-ui theme - dark, flat, muted teal. Requires Tailwind v4.",
+      "files": [
+        {
+          "path": "registry/default/theme/theme.css",
+          "type": "registry:file",
+          "target": "src/styles/hola-theme.css"
+        }
+      ]
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
-      "description": "A customizable button component with variants and sizes.",
+      "description": "Button with primary, secondary, ghost, and danger variants.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["utils"],
       "files": [
         {
           "path": "registry/default/button/button.tsx",
