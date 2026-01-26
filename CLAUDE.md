@@ -154,9 +154,22 @@ registry/
 
 | Package | Purpose |
 |---------|---------|
+| `@base-ui-components/react` | Unstyled primitives (Input, Dialog, Menu, etc.) |
 | `class-variance-authority` | Variant management |
 | `clsx` | Conditional classes |
 | `tailwind-merge` | Override conflicting Tailwind classes |
+
+## Base UI Usage
+
+**All components MUST use Base UI primitives where applicable.**
+
+```tsx
+import { Input } from "@base-ui-components/react/input"
+import { Dialog } from "@base-ui-components/react/dialog"
+import { Menu } from "@base-ui-components/react/menu"
+```
+
+Base UI provides accessibility and behavior - we add styling via cva + Tailwind.
 
 ## Consumer Usage
 
@@ -170,18 +183,18 @@ npx shadcn add https://oladayo21.github.io/hola-ui/r/theme.json
 
 Consumer must have Tailwind v4 with matching CSS variables defined in their `@theme` block.
 
-## Future Components
+## Components
 
-Priority based on pss-kitchen-ai usage:
-
-- [ ] Input
-- [ ] Select
-- [ ] Dialog/Modal
-- [ ] Dropdown Menu
-- [ ] Tabs
-- [ ] Badge
-- [ ] Card
-- [ ] Table
+| Component | Status | Base UI |
+|-----------|--------|---------|
+| Button | Done | No (native) |
+| Input | Done | Yes |
+| Select | Todo | Yes |
+| Dialog | Todo | Yes |
+| Menu | Todo | Yes |
+| Tabs | Todo | Yes |
+| Badge | Todo | No |
+| Card | Todo | No |
 
 ## Notes
 
