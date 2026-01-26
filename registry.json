@@ -43,6 +43,20 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Text input built on Base UI with default and ghost variants.",
+      "dependencies": ["@base-ui-components/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/input/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
