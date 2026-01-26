@@ -196,6 +196,7 @@ Consumer must have Tailwind v4 with matching CSS variables defined in their `@th
 | Dialog | Done | Yes | Modals, confirmations |
 | Menu | Done | Yes | Dropdown actions |
 | Tabs | Done | Yes | Section switching |
+| Table | Done | No | Data tables, compound |
 
 ## Notes
 
