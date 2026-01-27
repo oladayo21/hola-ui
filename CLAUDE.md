@@ -197,13 +197,13 @@ Consumer must have Tailwind v4 with matching CSS variables defined in their `@th
 | Menu | Done | Yes | Dropdown actions |
 | Tabs | Done | Yes | Section switching |
 | Table | Done | No | Data tables, compound |
+| Tooltip | Done | Yes | Hover hints |
+| Popover | Done | Yes | Floating panels |
 
 ## Future Components
 
 | Component | Base UI | Priority | Description |
 |-----------|---------|----------|-------------|
-| Tooltip | Yes | High | Hover hints, keyboard accessible |
-| Popover | Yes | High | Floating content panels |
 | Switch | Yes | High | Toggle on/off |
 | Checkbox | Yes | Medium | Form checkbox with label |
 | Radio | Yes | Medium | Radio button groups |
@@ -218,10 +218,6 @@ Consumer must have Tailwind v4 with matching CSS variables defined in their `@th
 | Combobox | Yes | Low | Autocomplete/searchable select |
 
 ### Implementation Notes
-
-**Tooltip** - Use `@base-ui-components/react/tooltip`. Simple hover trigger with positioned content.
-
-**Popover** - Use `@base-ui-components/react/popover`. Like Dialog but non-modal, triggered inline.
 
 **Switch** - Use `@base-ui-components/react/switch`. Binary toggle, style as pill shape.
 
