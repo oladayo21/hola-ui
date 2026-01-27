@@ -33,6 +33,9 @@ jobs:
 
       - run: pnpm build
 
+      - name: Copy registry index
+        run: cp registry.json public/r/registry.json
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public
