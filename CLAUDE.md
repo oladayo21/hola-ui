@@ -199,12 +199,12 @@ Consumer must have Tailwind v4 with matching CSS variables defined in their `@th
 | Table | Done | No | Data tables, compound |
 | Tooltip | Done | Yes | Hover hints |
 | Popover | Done | Yes | Floating panels |
+| Switch | Done | Yes | Toggle on/off |
 
 ## Future Components
 
 | Component | Base UI | Priority | Description |
 |-----------|---------|----------|-------------|
-| Switch | Yes | High | Toggle on/off |
 | Checkbox | Yes | Medium | Form checkbox with label |
 | Radio | Yes | Medium | Radio button groups |
 | Avatar | No | Medium | User avatars with fallback |
@@ -218,8 +218,6 @@ Consumer must have Tailwind v4 with matching CSS variables defined in their `@th
 | Combobox | Yes | Low | Autocomplete/searchable select |
 
 ### Implementation Notes
-
-**Switch** - Use `@base-ui-components/react/switch`. Binary toggle, style as pill shape.
 
 **Checkbox/Radio** - Use Base UI primitives. Include proper label association.
 
