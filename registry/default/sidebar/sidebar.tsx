@@ -361,21 +361,32 @@ const SidebarGroup = React.forwardRef<HTMLDivElement, SidebarGroupProps>(
 SidebarGroup.displayName = "SidebarGroup"
 
 // Group Label
-interface SidebarGroupLabelProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface SidebarGroupLabelProps extends React.HTMLAttributes<HTMLDivElement> {
+  render?: React.ReactElement
+}
 
 const SidebarGroupLabel = React.forwardRef<
   HTMLDivElement,
   SidebarGroupLabelProps
->(({ className, ...props }, ref) => {
+>(({ className, render, children, ...props }, ref) => {
+  const labelClassName = cn(
+    "px-2 py-1.5 text-xs font-medium text-muted-foreground-dim",
+    className
+  )
+
+  if (render) {
+    return React.cloneElement(render, {
+      ref,
+      className: cn(labelClassName, render.props.className),
+      ...props,
+      children,
+    })
+  }
+
   return (
-    <div
-      ref={ref}
-      className={cn(
-        "px-2 py-1.5 text-xs font-medium text-muted-foreground-dim",
-        className
-      )}
-      {...props}
-    />
+    <div ref={ref} className={labelClassName} {...props}>
+      {children}
+    </div>
   )
 })
 SidebarGroupLabel.displayName = "SidebarGroupLabel"
@@ -458,24 +469,35 @@ interface SidebarMenuButtonProps
     VariantProps<typeof sidebarMenuButtonVariants> {
   asChild?: boolean
   isActive?: boolean
+  render?: React.ReactElement
+  tooltip?: { children: React.ReactNode }
 }
 
 const SidebarMenuButton = React.forwardRef<
   HTMLButtonElement,
   SidebarMenuButtonProps
->(({ className, variant, size, isActive, asChild, ...props }, ref) => {
+>(({ className, variant, size, isActive, asChild, render, tooltip, children, ...props }, ref) => {
+  const buttonClassName = cn(
+    sidebarMenuButtonVariants({
+      variant: isActive ? "active" : variant,
+      size,
+      className,
+    })
+  )
+
+  if (render) {
+    return React.cloneElement(render, {
+      ref,
+      className: cn(buttonClassName, render.props.className),
+      ...props,
+      children,
+    })
+  }
+
   return (
-    <button
-      ref={ref}
-      className={cn(
-        sidebarMenuButtonVariants({
-          variant: isActive ? "active" : variant,
-          size,
-          className,
-        })
-      )}
-      {...props}
-    />
+    <button ref={ref} className={buttonClassName} {...props}>
+      {children}
+    </button>
   )
 })
 SidebarMenuButton.displayName = "SidebarMenuButton"
@@ -501,21 +523,32 @@ SidebarMenuBadge.displayName = "SidebarMenuBadge"
 
 // Menu Action
 interface SidebarMenuActionProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  render?: React.ReactElement
+}
 
 const SidebarMenuAction = React.forwardRef<
   HTMLButtonElement,
   SidebarMenuActionProps
->(({ className, ...props }, ref) => {
+>(({ className, render, children, ...props }, ref) => {
+  const actionClassName = cn(
+    "absolute right-1 top-1/2 -translate-y-1/2 flex h-5 w-5 items-center justify-center rounded-sm text-muted-foreground opacity-0 transition-opacity hover:bg-muted hover:text-foreground group-hover/menu-item:opacity-100",
+    className
+  )
+
+  if (render) {
+    return React.cloneElement(render, {
+      ref,
+      className: cn(actionClassName, render.props.className),
+      ...props,
+      children,
+    })
+  }
+
   return (
-    <button
-      ref={ref}
-      className={cn(
-        "absolute right-1 top-1/2 -translate-y-1/2 flex h-5 w-5 items-center justify-center rounded-sm text-muted-foreground opacity-0 transition-opacity hover:bg-muted hover:text-foreground group-hover/menu-item:opacity-100",
-        className
-      )}
-      {...props}
-    />
+    <button ref={ref} className={actionClassName} {...props}>
+      {children}
+    </button>
   )
 })
 SidebarMenuAction.displayName = "SidebarMenuAction"

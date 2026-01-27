@@ -55,13 +55,16 @@ SelectTrigger.displayName = "SelectTrigger"
 
 // Value
 interface SelectValueProps
-  extends React.ComponentProps<typeof SelectPrimitive.Value> {}
+  extends React.ComponentProps<typeof SelectPrimitive.Value> {
+  placeholder?: string
+}
 
 const SelectValue = React.forwardRef<HTMLSpanElement, SelectValueProps>(
-  ({ className, ...props }, ref) => {
+  ({ className, placeholder, ...props }, ref) => {
     return (
       <SelectPrimitive.Value
         ref={ref}
+        placeholder={placeholder}
         className={cn("text-foreground data-[placeholder]:text-muted-foreground", className)}
         {...props}
       />

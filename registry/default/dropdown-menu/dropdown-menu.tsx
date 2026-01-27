@@ -39,7 +39,7 @@ const DropdownMenuContent = React.forwardRef<
 >(({ className, children, sideOffset = 4, align = "start", side = "bottom", ...props }, ref) => {
   return (
     <MenuPrimitive.Portal>
-      <MenuPrimitive.Positioner sideOffset={sideOffset} alignment={align} side={side}>
+      <MenuPrimitive.Positioner sideOffset={sideOffset} align={align} side={side}>
         <MenuPrimitive.Popup
           ref={ref}
           className={cn(
