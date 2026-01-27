@@ -62,8 +62,8 @@
       "name": "textarea",
       "type": "registry:ui",
       "title": "Textarea",
-      "description": "Multiline text input built on Base UI with default and ghost variants.",
-      "dependencies": ["@base-ui-components/react", "class-variance-authority"],
+      "description": "Multiline text input with default and ghost variants.",
+      "dependencies": ["class-variance-authority"],
       "registryDependencies": ["utils"],
       "files": [
         {

@@ -190,7 +190,7 @@ Consumer must have Tailwind v4 with matching CSS variables defined in their `@th
 | Button | Done | No | Native button, cva variants |
 | Input | Done | Yes | Text input with variants |
 | Badge | Done | No | Status indicators (live/draft) |
-| Textarea | Done | Yes | AI chat, content editing |
+| Textarea | Done | No | AI chat, content editing |
 | Select | Done | Yes | Form dropdowns |
 | Card | Done | No | Content containers, compound |
 | Dialog | Done | Yes | Modals, confirmations |
