@@ -2,15 +2,21 @@ import * as React from "react"
 import { OTPInput, OTPInputContext } from "input-otp"
 import { cn } from "@/lib/utils"
 
-export interface InputOTPProps extends React.ComponentPropsWithoutRef<"input"> {
+export interface InputOTPProps {
   maxLength: number
   value?: string
   onChange?: (value: string) => void
+  onComplete?: (value: string) => void
   containerClassName?: string
+  className?: string
   textAlign?: "left" | "center" | "right"
   pushPasswordManagerStrategy?: "none" | "increase-width"
   pasteTransformer?: (pasted: string) => string
-  render?: (props: { slots: { char: string | null; hasFakeCaret: boolean; isActive: boolean }[] }) => React.ReactNode
+  disabled?: boolean
+  autoFocus?: boolean
+  pattern?: string
+  inputMode?: "text" | "numeric"
+  children?: React.ReactNode
 }
 
 const InputOTP = React.forwardRef<

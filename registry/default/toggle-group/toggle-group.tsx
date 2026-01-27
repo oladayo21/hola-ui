@@ -1,8 +1,6 @@
 import * as React from "react"
-import {
-  ToggleGroup as ToggleGroupPrimitive,
-  ToggleGroupItem as ToggleGroupItemPrimitive,
-} from "@base-ui-components/react/toggle-group"
+import { ToggleGroup as ToggleGroupPrimitive } from "@base-ui-components/react/toggle-group"
+import { Toggle as TogglePrimitive } from "@base-ui-components/react/toggle"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
@@ -81,7 +79,7 @@ const ToggleGroup = React.forwardRef<HTMLDivElement, ToggleGroupProps>(
 ToggleGroup.displayName = "ToggleGroup"
 
 export interface ToggleGroupItemProps
-  extends React.ComponentProps<typeof ToggleGroupItemPrimitive>,
+  extends React.ComponentProps<typeof TogglePrimitive>,
     VariantProps<typeof toggleGroupItemVariants> {
   children?: React.ReactNode
 }
@@ -93,7 +91,7 @@ const ToggleGroupItem = React.forwardRef<
   const context = React.useContext(ToggleGroupContext)
 
   return (
-    <ToggleGroupItemPrimitive
+    <TogglePrimitive
       ref={ref}
       className={cn(
         toggleGroupItemVariants({
