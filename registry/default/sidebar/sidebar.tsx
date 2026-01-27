@@ -467,7 +467,6 @@ const sidebarMenuButtonVariants = cva(
 interface SidebarMenuButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof sidebarMenuButtonVariants> {
-  asChild?: boolean
   isActive?: boolean
   render?: React.ReactElement
   tooltip?: { children: React.ReactNode }
@@ -476,7 +475,7 @@ interface SidebarMenuButtonProps
 const SidebarMenuButton = React.forwardRef<
   HTMLButtonElement,
   SidebarMenuButtonProps
->(({ className, variant, size, isActive, asChild, render, tooltip, children, ...props }, ref) => {
+>(({ className, variant, size, isActive, render, tooltip, children, ...props }, ref) => {
   const buttonClassName = cn(
     sidebarMenuButtonVariants({
       variant: isActive ? "active" : variant,

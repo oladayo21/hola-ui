@@ -54,20 +54,26 @@ BreadcrumbItem.displayName = "BreadcrumbItem"
 
 export interface BreadcrumbLinkProps
   extends React.ComponentPropsWithoutRef<"a"> {
-  asChild?: boolean
+  render?: React.ReactElement
 }
 
 const BreadcrumbLink = React.forwardRef<HTMLAnchorElement, BreadcrumbLinkProps>(
-  ({ className, asChild, ...props }, ref) => {
+  ({ className, render, children, ...props }, ref) => {
+    const linkClassName = cn("transition-colors hover:text-foreground", className)
+
+    if (render) {
+      return React.cloneElement(render, {
+        ref,
+        className: cn(linkClassName, render.props.className),
+        ...props,
+        children,
+      })
+    }
+
     return (
-      <a
-        ref={ref}
-        className={cn(
-          "transition-colors hover:text-foreground",
-          className
-        )}
-        {...props}
-      />
+      <a ref={ref} className={linkClassName} {...props}>
+        {children}
+      </a>
     )
   }
 )
