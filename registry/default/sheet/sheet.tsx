@@ -55,7 +55,7 @@ SheetOverlay.displayName = "SheetOverlay"
 
 // Content variants
 const sheetVariants = cva(
-  "fixed z-50 gap-4 bg-bg-secondary border-border-default p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
+  "fixed z-50 gap-4 bg-card border-border p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
   {
     variants: {
       side: {
@@ -89,7 +89,7 @@ const SheetContent = React.forwardRef<HTMLDivElement, SheetContentProps>(
           {...props}
         >
           {children}
-          <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-bg-primary transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 disabled:pointer-events-none">
+          <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -160,7 +160,7 @@ const SheetTitle = React.forwardRef<HTMLHeadingElement, SheetTitleProps>(
     return (
       <DialogPrimitive.Title
         ref={ref}
-        className={cn("text-lg font-medium text-text-primary", className)}
+        className={cn("text-lg font-medium text-foreground", className)}
         {...props}
       />
     )
@@ -179,7 +179,7 @@ const SheetDescription = React.forwardRef<
   return (
     <DialogPrimitive.Description
       ref={ref}
-      className={cn("text-sm text-text-secondary", className)}
+      className={cn("text-sm text-muted-foreground", className)}
       {...props}
     />
   )

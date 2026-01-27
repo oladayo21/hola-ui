@@ -7,7 +7,7 @@ const alertVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-bg-secondary border-border-default text-text-primary",
+        default: "bg-card border-border text-foreground",
         destructive: "border-red-600/50 bg-red-600/10 text-red-400 [&>svg]:text-red-400",
         warning: "border-yellow-600/50 bg-yellow-600/10 text-yellow-400 [&>svg]:text-yellow-400",
         success: "border-green-600/50 bg-green-600/10 text-green-400 [&>svg]:text-green-400",
@@ -62,7 +62,7 @@ const AlertDescription = React.forwardRef<
   return (
     <div
       ref={ref}
-      className={cn("text-sm text-text-secondary [&_p]:leading-relaxed", className)}
+      className={cn("text-sm text-muted-foreground [&_p]:leading-relaxed", className)}
       {...props}
     />
   )

@@ -43,7 +43,7 @@ const MenuContent = React.forwardRef<HTMLDivElement, MenuContentProps>(
           <MenuPrimitive.Popup
             ref={ref}
             className={cn(
-              "bg-bg-secondary border border-border-default shadow-lg rounded-sm min-w-[160px] p-1",
+              "bg-card border border-border shadow-lg rounded-sm min-w-[160px] p-1",
               "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
               "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95",
               className
@@ -69,8 +69,8 @@ const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>(
       <MenuPrimitive.Item
         ref={ref}
         className={cn(
-          "flex items-center px-3 py-2 rounded-sm text-[13px] text-text-primary cursor-pointer select-none outline-none",
-          "hover:bg-bg-tertiary focus:bg-bg-tertiary",
+          "flex items-center px-3 py-2 rounded-sm text-[13px] text-foreground cursor-pointer select-none outline-none",
+          "hover:bg-muted focus:bg-muted",
           "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
           className
         )}
@@ -108,7 +108,7 @@ const MenuLabel = React.forwardRef<HTMLDivElement, MenuLabelProps>(
       <MenuPrimitive.GroupLabel
         ref={ref}
         className={cn(
-          "px-3 py-2 text-xs font-medium text-text-tertiary",
+          "px-3 py-2 text-xs font-medium text-muted-foreground-dim",
           className
         )}
         {...props}
@@ -127,7 +127,7 @@ const MenuSeparator = React.forwardRef<HTMLDivElement, MenuSeparatorProps>(
     return (
       <MenuPrimitive.Separator
         ref={ref}
-        className={cn("h-px my-1 bg-border-default", className)}
+        className={cn("h-px my-1 bg-border", className)}
         {...props}
       />
     )

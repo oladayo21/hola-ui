@@ -45,7 +45,7 @@ const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentProps>(
           <PopoverPrimitive.Popup
             ref={ref}
             className={cn(
-              "bg-bg-secondary border border-border-default shadow-lg rounded-sm p-4",
+              "bg-card border border-border shadow-lg rounded-sm p-4",
               "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
               "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95",
               className
@@ -93,9 +93,9 @@ const PopoverClose = React.forwardRef<HTMLButtonElement, PopoverCloseProps>(
       <PopoverPrimitive.Close
         ref={ref}
         className={cn(
-          "absolute right-2 top-2 p-1 rounded-sm text-text-tertiary",
-          "hover:bg-bg-tertiary hover:text-text-primary",
-          "outline-none focus:bg-bg-tertiary",
+          "absolute right-2 top-2 p-1 rounded-sm text-muted-foreground-dim",
+          "hover:bg-muted hover:text-foreground",
+          "outline-none focus:bg-muted",
           className
         )}
         {...props}
@@ -115,7 +115,7 @@ const PopoverTitle = React.forwardRef<HTMLHeadingElement, PopoverTitleProps>(
     return (
       <PopoverPrimitive.Title
         ref={ref}
-        className={cn("text-sm font-medium text-text-primary", className)}
+        className={cn("text-sm font-medium text-foreground", className)}
         {...props}
       />
     )
@@ -135,7 +135,7 @@ const PopoverDescription = React.forwardRef<
   return (
     <PopoverPrimitive.Description
       ref={ref}
-      className={cn("text-sm text-text-secondary", className)}
+      className={cn("text-sm text-muted-foreground", className)}
       {...props}
     />
   )

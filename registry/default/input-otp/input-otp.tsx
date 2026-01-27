@@ -59,8 +59,8 @@ const InputOTPSlot = React.forwardRef<HTMLDivElement, InputOTPSlotProps>(
       <div
         ref={ref}
         className={cn(
-          "relative flex h-9 w-9 items-center justify-center border-y border-r border-border-default bg-bg-tertiary text-sm transition-all first:rounded-l-sm first:border-l last:rounded-r-sm",
-          isActive && "z-10 ring-1 ring-accent",
+          "relative flex h-9 w-9 items-center justify-center border-y border-r border-border bg-muted text-sm transition-all first:rounded-l-sm first:border-l last:rounded-r-sm",
+          isActive && "z-10 ring-1 ring-ring",
           className
         )}
         {...props}
@@ -68,7 +68,7 @@ const InputOTPSlot = React.forwardRef<HTMLDivElement, InputOTPSlotProps>(
         {char}
         {hasFakeCaret && (
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-            <div className="h-4 w-px animate-caret-blink bg-text-primary duration-1000" />
+            <div className="h-4 w-px animate-caret-blink bg-foreground duration-1000" />
           </div>
         )}
       </div>
@@ -96,7 +96,7 @@ const InputOTPSeparator = React.forwardRef<
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="text-text-tertiary"
+        className="text-muted-foreground-dim"
       >
         <circle cx="12" cy="12" r="1" />
       </svg>

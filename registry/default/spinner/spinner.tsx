@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const spinnerVariants = cva(
-  "animate-spin text-text-tertiary",
+  "animate-spin text-muted-foreground-dim",
   {
     variants: {
       size: {

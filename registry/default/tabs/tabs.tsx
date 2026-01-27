@@ -47,9 +47,9 @@ Tabs.displayName = "Tabs"
 const tabsListVariants = cva("relative flex items-center", {
   variants: {
     variant: {
-      line: "gap-1 border-b border-border-default",
-      pills: "gap-1 rounded-lg bg-bg-secondary p-1",
-      boxed: "gap-0 border-b border-border-default",
+      line: "gap-1 border-b border-border",
+      pills: "gap-1 rounded-lg bg-card p-1",
+      boxed: "gap-0 border-b border-border",
     },
     size: {
       sm: "",
@@ -92,16 +92,16 @@ const tabsTriggerVariants = cva(
   [
     "inline-flex items-center justify-center whitespace-nowrap font-medium",
     "transition-all duration-150 ease-out",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
     "disabled:pointer-events-none disabled:opacity-50",
   ],
   {
     variants: {
       variant: {
         line: [
-          "relative text-text-secondary",
-          "hover:text-text-primary",
-          "data-[selected]:text-text-primary",
+          "relative text-muted-foreground",
+          "hover:text-foreground",
+          "data-[selected]:text-foreground",
           // Animated underline pseudo-element
           "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5",
           "after:scale-x-0 after:bg-accent after:transition-transform after:duration-200",
@@ -110,15 +110,15 @@ const tabsTriggerVariants = cva(
           "-mb-px",
         ],
         pills: [
-          "rounded-md text-text-secondary",
-          "hover:text-text-primary hover:bg-bg-tertiary/50",
-          "data-[selected]:bg-bg-elevated data-[selected]:text-text-primary data-[selected]:shadow-sm",
+          "rounded-md text-muted-foreground",
+          "hover:text-foreground hover:bg-muted/50",
+          "data-[selected]:bg-accent data-[selected]:text-foreground data-[selected]:shadow-sm",
         ],
         boxed: [
-          "relative border border-transparent text-text-secondary",
-          "hover:text-text-primary",
+          "relative border border-transparent text-muted-foreground",
+          "hover:text-foreground",
           "rounded-t-md -mb-px",
-          "data-[selected]:border-border-default data-[selected]:border-b-bg-primary data-[selected]:bg-bg-primary data-[selected]:text-text-primary",
+          "data-[selected]:border-border data-[selected]:border-b-background data-[selected]:bg-background data-[selected]:text-foreground",
         ],
       },
       size: {
@@ -204,7 +204,7 @@ TabsIndicator.displayName = "TabsIndicator"
 // ============================================================================
 
 const tabsContentVariants = cva(
-  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
   {
     variants: {
       size: {

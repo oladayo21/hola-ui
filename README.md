@@ -90,7 +90,7 @@ Then import in your CSS:
 
 ## Theme
 
-Add to your CSS (Tailwind v4):
+Uses shadcn-compatible tokens. Add to your CSS (Tailwind v4):
 
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap');
@@ -99,27 +99,41 @@ Add to your CSS (Tailwind v4):
 @theme {
   --font-sans: 'Geist', system-ui, sans-serif;
 
-  --color-bg-primary: #101012;
-  --color-bg-secondary: #18181a;
-  --color-bg-tertiary: #222225;
-  --color-bg-elevated: #2c2c30;
+  --color-background: #101012;
+  --color-foreground: #eaeaea;
 
-  --color-border-default: rgba(255, 255, 255, 0.08);
-  --color-border-hover: rgba(255, 255, 255, 0.12);
+  --color-card: #18181a;
+  --color-card-foreground: #eaeaea;
 
-  --color-text-primary: #eaeaea;
-  --color-text-secondary: #9a9a9e;
-  --color-text-tertiary: #6a6a70;
+  --color-popover: #18181a;
+  --color-popover-foreground: #eaeaea;
 
-  --color-accent: #5a9a92;
-  --color-accent-hover: #6baba3;
-  --color-accent-text: #101012;
+  --color-primary: #5a9a92;
+  --color-primary-foreground: #101012;
+
+  --color-secondary: #222225;
+  --color-secondary-foreground: #eaeaea;
+
+  --color-muted: #222225;
+  --color-muted-foreground: #9a9a9e;
+
+  --color-accent: #2c2c30;
+  --color-accent-foreground: #eaeaea;
+
+  --color-destructive: #dc2626;
+  --color-destructive-foreground: #ffffff;
+
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-input: rgba(255, 255, 255, 0.08);
+  --color-ring: #5a9a92;
+
+  --radius: 2px;
 }
 
 body {
   font-family: var(--font-sans);
-  background: var(--color-bg-primary);
-  color: var(--color-text-primary);
+  background: var(--color-background);
+  color: var(--color-foreground);
   font-size: 13px;
 }
 ```

@@ -43,7 +43,7 @@ const ContextMenuContent = React.forwardRef<
         <MenuPrimitive.Popup
           ref={ref}
           className={cn(
-            "bg-bg-secondary border border-border-default shadow-lg rounded-sm min-w-[180px] p-1",
+            "bg-card border border-border shadow-lg rounded-sm min-w-[180px] p-1",
             "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
             "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95",
             className
@@ -70,8 +70,8 @@ const ContextMenuItem = React.forwardRef<HTMLDivElement, ContextMenuItemProps>(
       <MenuPrimitive.Item
         ref={ref}
         className={cn(
-          "relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-[13px] text-text-primary outline-none",
-          "hover:bg-bg-tertiary focus:bg-bg-tertiary",
+          "relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-[13px] text-foreground outline-none",
+          "hover:bg-muted focus:bg-muted",
           "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
           inset && "pl-8",
           className
@@ -95,8 +95,8 @@ const ContextMenuCheckboxItem = React.forwardRef<
     <MenuPrimitive.CheckboxItem
       ref={ref}
       className={cn(
-        "relative flex cursor-pointer select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-[13px] text-text-primary outline-none",
-        "hover:bg-bg-tertiary focus:bg-bg-tertiary",
+        "relative flex cursor-pointer select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-[13px] text-foreground outline-none",
+        "hover:bg-muted focus:bg-muted",
         "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         className
       )}
@@ -155,8 +155,8 @@ const ContextMenuRadioItem = React.forwardRef<
     <MenuPrimitive.RadioItem
       ref={ref}
       className={cn(
-        "relative flex cursor-pointer select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-[13px] text-text-primary outline-none",
-        "hover:bg-bg-tertiary focus:bg-bg-tertiary",
+        "relative flex cursor-pointer select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-[13px] text-foreground outline-none",
+        "hover:bg-muted focus:bg-muted",
         "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         className
       )}
@@ -195,7 +195,7 @@ const ContextMenuLabel = React.forwardRef<
     <MenuPrimitive.GroupLabel
       ref={ref}
       className={cn(
-        "px-2 py-1.5 text-xs font-medium text-text-tertiary",
+        "px-2 py-1.5 text-xs font-medium text-muted-foreground-dim",
         inset && "pl-8",
         className
       )}
@@ -216,7 +216,7 @@ const ContextMenuSeparator = React.forwardRef<
   return (
     <MenuPrimitive.Separator
       ref={ref}
-      className={cn("-mx-1 my-1 h-px bg-border-default", className)}
+      className={cn("-mx-1 my-1 h-px bg-border", className)}
       {...props}
     />
   )
@@ -235,7 +235,7 @@ const ContextMenuShortcut = React.forwardRef<
     <span
       ref={ref}
       className={cn(
-        "ml-auto text-xs tracking-widest text-text-tertiary",
+        "ml-auto text-xs tracking-widest text-muted-foreground-dim",
         className
       )}
       {...props}
@@ -283,8 +283,8 @@ const ContextMenuSubTrigger = React.forwardRef<
     <MenuPrimitive.SubmenuTrigger
       ref={ref}
       className={cn(
-        "flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-[13px] text-text-primary outline-none",
-        "hover:bg-bg-tertiary focus:bg-bg-tertiary",
+        "flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-[13px] text-foreground outline-none",
+        "hover:bg-muted focus:bg-muted",
         inset && "pl-8",
         className
       )}
@@ -324,7 +324,7 @@ const ContextMenuSubContent = React.forwardRef<
         <MenuPrimitive.Popup
           ref={ref}
           className={cn(
-            "bg-bg-secondary border border-border-default shadow-lg rounded-sm min-w-[180px] p-1",
+            "bg-card border border-border shadow-lg rounded-sm min-w-[180px] p-1",
             "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
             "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95",
             className

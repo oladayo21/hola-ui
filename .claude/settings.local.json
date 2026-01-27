@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(memory-manager)",
+      "Bash(gh run:*)",
+      "Bash(gh issue list:*)",
+      "Bash(pnpm tsc:*)",
+      "Bash(pnpm build:*)",
+      "Bash(grep:*)"
+    ]
+  }
+}

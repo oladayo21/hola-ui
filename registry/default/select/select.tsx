@@ -4,12 +4,12 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const selectTriggerVariants = cva(
-  "inline-flex items-center justify-between w-full text-text-primary transition-colors focus:outline-none disabled:cursor-not-allowed disabled:opacity-50",
+  "inline-flex items-center justify-between w-full text-foreground transition-colors focus:outline-none disabled:cursor-not-allowed disabled:opacity-50",
   {
     variants: {
       variant: {
         default:
-          "bg-bg-secondary border border-border-default hover:border-border-hover focus:border-accent px-3 py-2 rounded-sm",
+          "bg-card border border-border hover:border-border-hover focus:border-ring px-3 py-2 rounded-sm",
         ghost: "bg-transparent border-none",
       },
       size: {
@@ -44,7 +44,7 @@ const SelectTrigger = React.forwardRef<HTMLButtonElement, SelectTriggerProps>(
         {...props}
       >
         {children}
-        <SelectPrimitive.Icon className="ml-2 text-text-tertiary">
+        <SelectPrimitive.Icon className="ml-2 text-muted-foreground-dim">
           <ChevronDownIcon />
         </SelectPrimitive.Icon>
       </SelectPrimitive.Trigger>
@@ -62,7 +62,7 @@ const SelectValue = React.forwardRef<HTMLSpanElement, SelectValueProps>(
     return (
       <SelectPrimitive.Value
         ref={ref}
-        className={cn("text-text-primary data-[placeholder]:text-text-muted", className)}
+        className={cn("text-foreground data-[placeholder]:text-muted-foreground", className)}
         {...props}
       />
     )
@@ -84,7 +84,7 @@ const SelectContent = React.forwardRef<HTMLDivElement, SelectContentProps>(
           <SelectPrimitive.Popup
             ref={ref}
             className={cn(
-              "bg-bg-secondary border border-border-default shadow-lg rounded-sm overflow-hidden min-w-[var(--anchor-width)]",
+              "bg-card border border-border shadow-lg rounded-sm overflow-hidden min-w-[var(--anchor-width)]",
               "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
               "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95",
               className
@@ -112,8 +112,8 @@ const SelectItem = React.forwardRef<HTMLDivElement, SelectItemProps>(
       <SelectPrimitive.Item
         ref={ref}
         className={cn(
-          "relative flex items-center px-2 py-1.5 rounded-sm text-[13px] text-text-primary cursor-pointer select-none outline-none",
-          "hover:bg-bg-tertiary focus:bg-bg-tertiary",
+          "relative flex items-center px-2 py-1.5 rounded-sm text-[13px] text-foreground cursor-pointer select-none outline-none",
+          "hover:bg-muted focus:bg-muted",
           "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
           className
         )}
@@ -158,7 +158,7 @@ const SelectLabel = React.forwardRef<HTMLDivElement, SelectLabelProps>(
       <SelectPrimitive.GroupLabel
         ref={ref}
         className={cn(
-          "px-2 py-1.5 text-xs font-medium text-text-tertiary",
+          "px-2 py-1.5 text-xs font-medium text-muted-foreground-dim",
           className
         )}
         {...props}
@@ -177,7 +177,7 @@ const SelectSeparator = React.forwardRef<HTMLDivElement, SelectSeparatorProps>(
     return (
       <SelectPrimitive.Separator
         ref={ref}
-        className={cn("h-px my-1 bg-border-default", className)}
+        className={cn("h-px my-1 bg-border", className)}
         {...props}
       />
     )

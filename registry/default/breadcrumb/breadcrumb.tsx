@@ -26,7 +26,7 @@ const BreadcrumbList = React.forwardRef<HTMLOListElement, BreadcrumbListProps>(
       <ol
         ref={ref}
         className={cn(
-          "flex flex-wrap items-center gap-1.5 break-words text-sm text-text-secondary sm:gap-2.5",
+          "flex flex-wrap items-center gap-1.5 break-words text-sm text-muted-foreground sm:gap-2.5",
           className
         )}
         {...props}
@@ -63,7 +63,7 @@ const BreadcrumbLink = React.forwardRef<HTMLAnchorElement, BreadcrumbLinkProps>(
       <a
         ref={ref}
         className={cn(
-          "transition-colors hover:text-text-primary",
+          "transition-colors hover:text-foreground",
           className
         )}
         {...props}
@@ -84,7 +84,7 @@ const BreadcrumbPage = React.forwardRef<HTMLSpanElement, BreadcrumbPageProps>(
         role="link"
         aria-disabled="true"
         aria-current="page"
-        className={cn("font-medium text-text-primary", className)}
+        className={cn("font-medium text-foreground", className)}
         {...props}
       />
     )
@@ -104,7 +104,7 @@ const BreadcrumbSeparator = React.forwardRef<
       ref={ref}
       role="presentation"
       aria-hidden="true"
-      className={cn("[&>svg]:size-3.5 text-text-tertiary", className)}
+      className={cn("[&>svg]:size-3.5 text-muted-foreground-dim", className)}
       {...props}
     >
       {children ?? (

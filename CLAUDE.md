@@ -29,24 +29,20 @@ pnpm install               # Install deps
 - **Geist font** - 13px body
 - **Subtle borders** - `rgba(255, 255, 255, 0.08)`
 
-### CSS Variables (Tailwind v4 @theme)
+### CSS Variables (shadcn-compatible)
 
 ```css
---color-bg-primary: #101012;
---color-bg-secondary: #18181a;
---color-bg-tertiary: #222225;
---color-bg-elevated: #2c2c30;
-
---color-text-primary: #eaeaea;
---color-text-secondary: #9a9a9e;
---color-text-tertiary: #6a6a70;
-
---color-accent: #5a9a92;
---color-accent-hover: #6baba3;
---color-accent-text: #101012;
-
---color-border-default: rgba(255, 255, 255, 0.08);
---color-border-hover: rgba(255, 255, 255, 0.12);
+--color-background: #101012;
+--color-foreground: #eaeaea;
+--color-card: #18181a;
+--color-muted: #222225;
+--color-muted-foreground: #9a9a9e;
+--color-primary: #5a9a92;
+--color-primary-foreground: #101012;
+--color-accent: #2c2c30;
+--color-border: rgba(255, 255, 255, 0.08);
+--color-ring: #5a9a92;
+--radius: 2px;
 ```
 
 ## Component Patterns

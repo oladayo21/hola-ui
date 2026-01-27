@@ -129,7 +129,7 @@ const SidebarProvider = React.forwardRef<HTMLDivElement, SidebarProviderProps>(
             } as React.CSSProperties
           }
           className={cn(
-            "group/sidebar-wrapper flex min-h-svh w-full has-[[data-variant=inset]]:bg-bg-secondary",
+            "group/sidebar-wrapper flex min-h-svh w-full has-[[data-variant=inset]]:bg-card",
             className
           )}
           {...props}
@@ -144,13 +144,13 @@ SidebarProvider.displayName = "SidebarProvider"
 
 // Sidebar
 const sidebarVariants = cva(
-  "flex h-full w-[--sidebar-width] flex-col bg-bg-secondary text-text-primary",
+  "flex h-full w-[--sidebar-width] flex-col bg-card text-foreground",
   {
     variants: {
       variant: {
-        sidebar: "border-r border-border-default",
-        floating: "m-2 rounded-sm border border-border-default shadow-lg",
-        inset: "border-r border-border-default",
+        sidebar: "border-r border-border",
+        floating: "m-2 rounded-sm border border-border shadow-lg",
+        inset: "border-r border-border",
       },
       collapsible: {
         offcanvas:
@@ -212,7 +212,7 @@ const Sidebar = React.forwardRef<HTMLDivElement, SidebarProps>(
             data-state={openMobile ? "open" : "closed"}
             data-side={side}
             className={cn(
-              "fixed inset-y-0 z-50 flex w-[--sidebar-width-mobile] flex-col bg-bg-secondary transition-transform duration-200 ease-in-out",
+              "fixed inset-y-0 z-50 flex w-[--sidebar-width-mobile] flex-col bg-card transition-transform duration-200 ease-in-out",
               side === "left"
                 ? "left-0 data-[state=closed]:-translate-x-full"
                 : "right-0 data-[state=closed]:translate-x-full",
@@ -267,7 +267,7 @@ const SidebarTrigger = React.forwardRef<HTMLButtonElement, SidebarTriggerProps>(
           toggleSidebar()
         }}
         className={cn(
-          "inline-flex h-8 w-8 items-center justify-center rounded-sm text-text-secondary hover:bg-bg-tertiary hover:text-text-primary",
+          "inline-flex h-8 w-8 items-center justify-center rounded-sm text-muted-foreground hover:bg-muted hover:text-foreground",
           className
         )}
         {...props}
@@ -371,7 +371,7 @@ const SidebarGroupLabel = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        "px-2 py-1.5 text-xs font-medium text-text-tertiary",
+        "px-2 py-1.5 text-xs font-medium text-muted-foreground-dim",
         className
       )}
       {...props}
@@ -437,8 +437,8 @@ const sidebarMenuButtonVariants = cva(
     variants: {
       variant: {
         default:
-          "text-text-secondary hover:bg-bg-tertiary hover:text-text-primary",
-        active: "bg-bg-tertiary text-text-primary",
+          "text-muted-foreground hover:bg-muted hover:text-foreground",
+        active: "bg-muted text-foreground",
       },
       size: {
         sm: "h-7 text-xs",
@@ -490,7 +490,7 @@ const SidebarSeparator = React.forwardRef<
   return (
     <div
       ref={ref}
-      className={cn("mx-2 my-2 h-px bg-border-default", className)}
+      className={cn("mx-2 my-2 h-px bg-border", className)}
       {...props}
     />
   )
@@ -506,7 +506,7 @@ const SidebarInset = React.forwardRef<HTMLDivElement, SidebarInsetProps>(
       <div
         ref={ref}
         className={cn(
-          "flex flex-1 flex-col overflow-auto bg-bg-primary",
+          "flex flex-1 flex-col overflow-auto bg-background",
           className
         )}
         {...props}
