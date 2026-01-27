@@ -56,7 +56,9 @@ const ToggleGroupContext = React.createContext<ToggleGroupContextValue>({
 
 export interface ToggleGroupProps
   extends React.ComponentProps<typeof ToggleGroupPrimitive.Root>,
-    VariantProps<typeof toggleGroupVariants> {}
+    VariantProps<typeof toggleGroupVariants> {
+  children?: React.ReactNode
+}
 
 const ToggleGroup = React.forwardRef<HTMLDivElement, ToggleGroupProps>(
   ({ className, variant, size, children, ...props }, ref) => {
@@ -77,7 +79,9 @@ ToggleGroup.displayName = "ToggleGroup"
 
 export interface ToggleGroupItemProps
   extends React.ComponentProps<typeof ToggleGroupPrimitive.Item>,
-    VariantProps<typeof toggleGroupItemVariants> {}
+    VariantProps<typeof toggleGroupItemVariants> {
+  children?: React.ReactNode
+}
 
 const ToggleGroupItem = React.forwardRef<
   HTMLButtonElement,

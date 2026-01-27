@@ -422,7 +422,7 @@ const SidebarMenuItem = React.forwardRef<HTMLLIElement, SidebarMenuItemProps>(
     return (
       <li
         ref={ref}
-        className={cn("flex", className)}
+        className={cn("group/menu-item relative flex", className)}
         {...props}
       />
     )
@@ -480,6 +480,70 @@ const SidebarMenuButton = React.forwardRef<
 })
 SidebarMenuButton.displayName = "SidebarMenuButton"
 
+// Menu Badge
+interface SidebarMenuBadgeProps extends React.HTMLAttributes<HTMLSpanElement> {}
+
+const SidebarMenuBadge = React.forwardRef<HTMLSpanElement, SidebarMenuBadgeProps>(
+  ({ className, ...props }, ref) => {
+    return (
+      <span
+        ref={ref}
+        className={cn(
+          "absolute right-2 top-1/2 -translate-y-1/2 text-xs font-medium text-muted-foreground",
+          className
+        )}
+        {...props}
+      />
+    )
+  }
+)
+SidebarMenuBadge.displayName = "SidebarMenuBadge"
+
+// Menu Action
+interface SidebarMenuActionProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+
+const SidebarMenuAction = React.forwardRef<
+  HTMLButtonElement,
+  SidebarMenuActionProps
+>(({ className, ...props }, ref) => {
+  return (
+    <button
+      ref={ref}
+      className={cn(
+        "absolute right-1 top-1/2 -translate-y-1/2 flex h-5 w-5 items-center justify-center rounded-sm text-muted-foreground opacity-0 transition-opacity hover:bg-muted hover:text-foreground group-hover/menu-item:opacity-100",
+        className
+      )}
+      {...props}
+    />
+  )
+})
+SidebarMenuAction.displayName = "SidebarMenuAction"
+
+// Menu Skeleton
+interface SidebarMenuSkeletonProps extends React.HTMLAttributes<HTMLDivElement> {
+  showIcon?: boolean
+}
+
+const SidebarMenuSkeleton = React.forwardRef<
+  HTMLDivElement,
+  SidebarMenuSkeletonProps
+>(({ className, showIcon = true, ...props }, ref) => {
+  return (
+    <div
+      ref={ref}
+      className={cn("flex h-8 items-center gap-2 px-2", className)}
+      {...props}
+    >
+      {showIcon && (
+        <div className="h-4 w-4 animate-pulse rounded-sm bg-muted" />
+      )}
+      <div className="h-3 flex-1 animate-pulse rounded-sm bg-muted" />
+    </div>
+  )
+})
+SidebarMenuSkeleton.displayName = "SidebarMenuSkeleton"
+
 // Separator
 interface SidebarSeparatorProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -526,8 +590,11 @@ export {
   SidebarHeader,
   SidebarInset,
   SidebarMenu,
+  SidebarMenuAction,
+  SidebarMenuBadge,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSkeleton,
   SidebarProvider,
   SidebarSeparator,
   SidebarTrigger,
@@ -543,8 +610,11 @@ export {
   type SidebarHeaderProps,
   type SidebarInsetProps,
   type SidebarMenuProps,
+  type SidebarMenuActionProps,
+  type SidebarMenuBadgeProps,
   type SidebarMenuButtonProps,
   type SidebarMenuItemProps,
+  type SidebarMenuSkeletonProps,
   type SidebarProviderProps,
   type SidebarSeparatorProps,
   type SidebarTriggerProps,

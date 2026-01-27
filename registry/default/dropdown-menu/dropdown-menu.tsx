@@ -29,15 +29,17 @@ DropdownMenuTrigger.displayName = "DropdownMenuTrigger"
 interface DropdownMenuContentProps
   extends React.ComponentProps<typeof MenuPrimitive.Popup> {
   sideOffset?: number
+  align?: "start" | "center" | "end"
+  side?: "top" | "bottom" | "left" | "right"
 }
 
 const DropdownMenuContent = React.forwardRef<
   HTMLDivElement,
   DropdownMenuContentProps
->(({ className, children, sideOffset = 4, ...props }, ref) => {
+>(({ className, children, sideOffset = 4, align = "start", side = "bottom", ...props }, ref) => {
   return (
     <MenuPrimitive.Portal>
-      <MenuPrimitive.Positioner sideOffset={sideOffset}>
+      <MenuPrimitive.Positioner sideOffset={sideOffset} alignment={align} side={side}>
         <MenuPrimitive.Popup
           ref={ref}
           className={cn(
@@ -60,19 +62,21 @@ DropdownMenuContent.displayName = "DropdownMenuContent"
 interface DropdownMenuItemProps
   extends React.ComponentProps<typeof MenuPrimitive.Item> {
   inset?: boolean
+  variant?: "default" | "destructive"
 }
 
 const DropdownMenuItem = React.forwardRef<
   HTMLDivElement,
   DropdownMenuItemProps
->(({ className, inset, ...props }, ref) => {
+>(({ className, inset, variant = "default", ...props }, ref) => {
   return (
     <MenuPrimitive.Item
       ref={ref}
       className={cn(
-        "relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-[13px] text-foreground outline-none",
-        "hover:bg-muted focus:bg-muted",
+        "relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-[13px] outline-none",
         "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        variant === "default" && "text-foreground hover:bg-muted focus:bg-muted",
+        variant === "destructive" && "text-destructive hover:bg-destructive/10 focus:bg-destructive/10",
         inset && "pl-8",
         className
       )}
