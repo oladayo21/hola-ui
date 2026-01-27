@@ -169,22 +169,82 @@ function App() {
       </Section>
 
       <Section title="Tabs">
-        <Tabs defaultValue="tab1">
-          <TabsList>
-            <TabsTrigger value="tab1">Overview</TabsTrigger>
-            <TabsTrigger value="tab2">Settings</TabsTrigger>
-            <TabsTrigger value="tab3">Analytics</TabsTrigger>
-          </TabsList>
-          <TabsContent value="tab1">
-            <p className="text-text-secondary">Overview content goes here.</p>
-          </TabsContent>
-          <TabsContent value="tab2">
-            <p className="text-text-secondary">Settings content goes here.</p>
-          </TabsContent>
-          <TabsContent value="tab3">
-            <p className="text-text-secondary">Analytics content goes here.</p>
-          </TabsContent>
-        </Tabs>
+        <Row label="Line (default)">
+          <Tabs defaultValue="tab1" variant="line">
+            <TabsList>
+              <TabsTrigger value="tab1">Overview</TabsTrigger>
+              <TabsTrigger value="tab2">Settings</TabsTrigger>
+              <TabsTrigger value="tab3">Analytics</TabsTrigger>
+            </TabsList>
+            <TabsContent value="tab1">
+              <p className="text-text-secondary">Overview content with underline tabs.</p>
+            </TabsContent>
+            <TabsContent value="tab2">
+              <p className="text-text-secondary">Settings content goes here.</p>
+            </TabsContent>
+            <TabsContent value="tab3">
+              <p className="text-text-secondary">Analytics content goes here.</p>
+            </TabsContent>
+          </Tabs>
+        </Row>
+        <Row label="Pills">
+          <Tabs defaultValue="tab1" variant="pills">
+            <TabsList>
+              <TabsTrigger value="tab1">Overview</TabsTrigger>
+              <TabsTrigger value="tab2">Settings</TabsTrigger>
+              <TabsTrigger value="tab3">Analytics</TabsTrigger>
+            </TabsList>
+            <TabsContent value="tab1">
+              <p className="text-text-secondary">Overview content with pill tabs.</p>
+            </TabsContent>
+            <TabsContent value="tab2">
+              <p className="text-text-secondary">Settings content goes here.</p>
+            </TabsContent>
+            <TabsContent value="tab3">
+              <p className="text-text-secondary">Analytics content goes here.</p>
+            </TabsContent>
+          </Tabs>
+        </Row>
+        <Row label="Boxed">
+          <Tabs defaultValue="tab1" variant="boxed">
+            <TabsList>
+              <TabsTrigger value="tab1">Overview</TabsTrigger>
+              <TabsTrigger value="tab2">Settings</TabsTrigger>
+              <TabsTrigger value="tab3">Analytics</TabsTrigger>
+            </TabsList>
+            <TabsContent value="tab1">
+              <p className="text-text-secondary">Overview content with boxed tabs.</p>
+            </TabsContent>
+            <TabsContent value="tab2">
+              <p className="text-text-secondary">Settings content goes here.</p>
+            </TabsContent>
+            <TabsContent value="tab3">
+              <p className="text-text-secondary">Analytics content goes here.</p>
+            </TabsContent>
+          </Tabs>
+        </Row>
+        <Row label="Sizes (pills)">
+          <div className="flex flex-col gap-4 w-full">
+            <Tabs defaultValue="tab1" variant="pills" size="sm">
+              <TabsList>
+                <TabsTrigger value="tab1">Small</TabsTrigger>
+                <TabsTrigger value="tab2">Tabs</TabsTrigger>
+              </TabsList>
+            </Tabs>
+            <Tabs defaultValue="tab1" variant="pills" size="md">
+              <TabsList>
+                <TabsTrigger value="tab1">Medium</TabsTrigger>
+                <TabsTrigger value="tab2">Tabs</TabsTrigger>
+              </TabsList>
+            </Tabs>
+            <Tabs defaultValue="tab1" variant="pills" size="lg">
+              <TabsList>
+                <TabsTrigger value="tab1">Large</TabsTrigger>
+                <TabsTrigger value="tab2">Tabs</TabsTrigger>
+              </TabsList>
+            </Tabs>
+          </div>
+        </Row>
       </Section>
 
       <Section title="Dialog">

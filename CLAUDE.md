@@ -195,7 +195,7 @@ Consumer must have Tailwind v4 with matching CSS variables defined in their `@th
 | Card | Done | No | Content containers, compound |
 | Dialog | Done | Yes | Modals, confirmations |
 | Menu | Done | Yes | Dropdown actions |
-| Tabs | Done | Yes | Section switching |
+| Tabs | Done | Yes | Line/pills/boxed variants, sizes |
 | Table | Done | No | Data tables, compound |
 | Tooltip | Done | Yes | Hover hints |
 | Popover | Done | Yes | Floating panels |

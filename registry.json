@@ -118,8 +118,8 @@
       "name": "tabs",
       "type": "registry:ui",
       "title": "Tabs",
-      "description": "Tabs component built on Base UI with animated indicator support.",
-      "dependencies": ["@base-ui-components/react"],
+      "description": "Tabs component with line, pills, and boxed variants. Built on Base UI with size options.",
+      "dependencies": ["@base-ui-components/react", "class-variance-authority"],
       "registryDependencies": ["utils"],
       "files": [
         {
