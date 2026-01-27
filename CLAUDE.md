@@ -173,59 +173,75 @@ Base UI provides accessibility and behavior - we add styling via cva + Tailwind.
 
 ## Consumer Usage
 
-```bash
-# Install button (auto-installs utils + deps)
-npx shadcn add https://oladayo21.github.io/hola-ui/r/button.json
+Add registry to `components.json`:
 
-# Install theme CSS
-npx shadcn add https://oladayo21.github.io/hola-ui/r/theme.json
+```json
+{
+  "registries": {
+    "hola": {
+      "url": "https://oladayo21.github.io/hola-ui/r"
+    }
+  }
+}
+```
+
+Then install components:
+
+```bash
+npx shadcn add hola/button
+npx shadcn add hola/theme
 ```
 
 Consumer must have Tailwind v4 with matching CSS variables defined in their `@theme` block.
 
-## Components
+## Components (37 total)
 
-| Component | Status | Base UI | Notes |
-|-----------|--------|---------|-------|
-| Button | Done | No | Native button, cva variants |
-| Input | Done | Yes | Text input with variants |
-| Badge | Done | No | Status indicators (live/draft) |
-| Textarea | Done | No | AI chat, content editing |
-| Select | Done | Yes | Form dropdowns |
-| Card | Done | No | Content containers, compound |
-| Dialog | Done | Yes | Modals, confirmations |
-| Menu | Done | Yes | Dropdown actions |
-| Tabs | Done | Yes | Line/pills/boxed variants, sizes |
-| Table | Done | No | Data tables, compound |
-| Tooltip | Done | Yes | Hover hints |
-| Popover | Done | Yes | Floating panels |
-| Switch | Done | Yes | Toggle on/off |
+| Component | Base UI | Notes |
+|-----------|---------|-------|
+| Alert | No | Inline alerts with variants |
+| AlertDialog | Yes | Confirmation modals |
+| Avatar | No | Image with fallback |
+| Badge | No | Status indicators |
+| Breadcrumb | No | Navigation breadcrumbs |
+| Button | No | Primary, secondary, ghost, danger |
+| Card | No | Content containers, compound |
+| Checkbox | Yes | Form checkbox with sizes |
+| Collapsible | Yes | Expandable sections |
+| ContextMenu | Yes | Right-click menus |
+| Dialog | Yes | Modals, confirmations |
+| DropdownMenu | Yes | Dropdown menus |
+| Input | Yes | Text input with variants |
+| InputOTP | No | OTP/verification (input-otp lib) |
+| Label | No | Form labels |
+| Menu | Yes | Generic dropdown menu |
+| NavigationMenu | Yes | Site navigation |
+| Popover | Yes | Floating panels |
+| Progress | Yes | Progress bars |
+| ScrollArea | Yes | Custom scrollbars |
+| Select | Yes | Form dropdowns |
+| Separator | No | Divider lines |
+| Sheet | Yes | Slide-in panels |
+| Sidebar | No | App sidebar with context |
+| Skeleton | No | Loading placeholders |
+| Sonner | No | Toast notifications (sonner lib) |
+| Spinner | No | Loading spinners |
+| Switch | Yes | Toggle on/off |
+| Table | No | Data tables, compound |
+| Tabs | Yes | Line/pills/boxed variants |
+| Textarea | No | Multiline input |
+| Toggle | Yes | Toggle buttons |
+| ToggleGroup | Yes | Toggle button groups |
+| Tooltip | Yes | Hover hints |
+| VisuallyHidden | No | Screen reader text |
 
 ## Future Components
 
-| Component | Base UI | Priority | Description |
-|-----------|---------|----------|-------------|
-| Checkbox | Yes | Medium | Form checkbox with label |
-| Radio | Yes | Medium | Radio button groups |
-| Avatar | No | Medium | User avatars with fallback |
-| Separator | No | Low | Horizontal/vertical dividers |
-| Skeleton | No | Low | Loading placeholders |
-| Toast | Yes | Low | Notifications (requires provider) |
-| Accordion | Yes | Low | Collapsible sections |
-| Alert | No | Low | Inline alerts/callouts |
-| Progress | Yes | Low | Progress bars |
-| Slider | Yes | Low | Range input |
-| Combobox | Yes | Low | Autocomplete/searchable select |
-
-### Implementation Notes
-
-**Checkbox/Radio** - Use Base UI primitives. Include proper label association.
-
-**Toast** - Use `@base-ui-components/react/toast`. Requires ToastProvider at app root.
-
-**Avatar** - No Base UI needed. Image with initials fallback.
-
-**Skeleton** - No Base UI needed. Animated placeholder divs.
+| Component | Base UI | Description |
+|-----------|---------|-------------|
+| Radio | Yes | Radio button groups |
+| Slider | Yes | Range input |
+| Accordion | Yes | Multi-section collapsible |
+| Combobox | Yes | Autocomplete select |
 
 ## Notes
 
