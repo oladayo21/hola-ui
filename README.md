@@ -75,7 +75,7 @@ Then import in your CSS:
 | `select` | Dropdowns |
 | `separator` | Divider lines |
 | `sheet` | Slide-in panels |
-| `sidebar` | App sidebar |
+| `sidebar` | Toggleable sidebar with mobile drawer |
 | `skeleton` | Loading placeholders |
 | `sonner` | Toast notifications |
 | `spinner` | Loading spinners |

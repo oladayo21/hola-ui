@@ -354,7 +354,7 @@
       "name": "sidebar",
       "type": "registry:ui",
       "title": "Sidebar",
-      "description": "Full-featured sidebar with Provider, menus, groups, collapsible modes, and mobile support.",
+      "description": "Toggleable sidebar with Provider, menus, groups, and mobile drawer support.",
       "dependencies": ["class-variance-authority"],
       "registryDependencies": ["utils"],
       "files": [
