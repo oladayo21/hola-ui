@@ -31,43 +31,43 @@
       ]
     },
     {
-      "name": "button",
+      "name": "alert",
       "type": "registry:ui",
-      "title": "Button",
-      "description": "Button with primary, secondary, ghost, and danger variants.",
+      "title": "Alert",
+      "description": "Alert with default, destructive, warning, and success variants.",
       "dependencies": ["class-variance-authority"],
       "registryDependencies": ["utils"],
       "files": [
         {
-          "path": "registry/default/button/button.tsx",
+          "path": "registry/default/alert/alert.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "input",
+      "name": "alert-dialog",
       "type": "registry:ui",
-      "title": "Input",
-      "description": "Text input built on Base UI with default and ghost variants.",
-      "dependencies": ["@base-ui-components/react", "class-variance-authority"],
+      "title": "AlertDialog",
+      "description": "Modal dialog for confirmations with Action and Cancel buttons. Built on Base UI.",
+      "dependencies": ["@base-ui-components/react"],
       "registryDependencies": ["utils"],
       "files": [
         {
-          "path": "registry/default/input/input.tsx",
+          "path": "registry/default/alert-dialog/alert-dialog.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "textarea",
+      "name": "avatar",
       "type": "registry:ui",
-      "title": "Textarea",
-      "description": "Multiline text input with default and ghost variants.",
+      "title": "Avatar",
+      "description": "Avatar with image and fallback support. Size variants: sm, md, lg, xl.",
       "dependencies": ["class-variance-authority"],
       "registryDependencies": ["utils"],
       "files": [
         {
-          "path": "registry/default/textarea/textarea.tsx",
+          "path": "registry/default/avatar/avatar.tsx",
           "type": "registry:ui"
         }
       ]
@@ -87,6 +87,33 @@
       ]
     },
     {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Breadcrumb navigation with List, Item, Link, Page, Separator, and Ellipsis components.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/breadcrumb/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Button with primary, secondary, ghost, and danger variants.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/button/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "card",
       "type": "registry:ui",
       "title": "Card",
@@ -101,29 +128,43 @@
       ]
     },
     {
-      "name": "select",
+      "name": "checkbox",
       "type": "registry:ui",
-      "title": "Select",
-      "description": "Select dropdown built on Base UI with default and ghost variants.",
+      "title": "Checkbox",
+      "description": "Checkbox built on Base UI with sm, md, lg size variants.",
       "dependencies": ["@base-ui-components/react", "class-variance-authority"],
       "registryDependencies": ["utils"],
       "files": [
         {
-          "path": "registry/default/select/select.tsx",
+          "path": "registry/default/checkbox/checkbox.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "tabs",
+      "name": "collapsible",
       "type": "registry:ui",
-      "title": "Tabs",
-      "description": "Tabs component with line, pills, and boxed variants. Built on Base UI with size options.",
-      "dependencies": ["@base-ui-components/react", "class-variance-authority"],
+      "title": "Collapsible",
+      "description": "Collapsible section built on Base UI with animated open/close.",
+      "dependencies": ["@base-ui-components/react"],
       "registryDependencies": ["utils"],
       "files": [
         {
-          "path": "registry/default/tabs/tabs.tsx",
+          "path": "registry/default/collapsible/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "ContextMenu",
+      "description": "Right-click context menu built on Base UI with items, checkboxes, radios, submenus.",
+      "dependencies": ["@base-ui-components/react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/context-menu/context-menu.tsx",
           "type": "registry:ui"
         }
       ]
@@ -143,6 +184,62 @@
       ]
     },
     {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "DropdownMenu",
+      "description": "Dropdown menu built on Base UI with items, checkboxes, radios, submenus.",
+      "dependencies": ["@base-ui-components/react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/dropdown-menu/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Text input built on Base UI with default and ghost variants.",
+      "dependencies": ["@base-ui-components/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/input/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "InputOTP",
+      "description": "One-time password input with accessible slots and groups.",
+      "dependencies": ["input-otp"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/input-otp/input-otp.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Form label with peer-disabled styling.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/label/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "menu",
       "type": "registry:ui",
       "title": "Menu",
@@ -157,28 +254,15 @@
       ]
     },
     {
-      "name": "table",
+      "name": "navigation-menu",
       "type": "registry:ui",
-      "title": "Table",
-      "description": "Data table with Header, Body, Row, Head, Cell, Footer, and Caption components.",
+      "title": "NavigationMenu",
+      "description": "Navigation menu built on Base UI with viewport, indicators, and content transitions.",
+      "dependencies": ["@base-ui-components/react", "class-variance-authority"],
       "registryDependencies": ["utils"],
       "files": [
         {
-          "path": "registry/default/table/table.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "tooltip",
-      "type": "registry:ui",
-      "title": "Tooltip",
-      "description": "Tooltip built on Base UI with fade animation and arrow support.",
-      "dependencies": ["@base-ui-components/react"],
-      "registryDependencies": ["utils"],
-      "files": [
-        {
-          "path": "registry/default/tooltip/tooltip.tsx",
+          "path": "registry/default/navigation-menu/navigation-menu.tsx",
           "type": "registry:ui"
         }
       ]
@@ -198,6 +282,130 @@
       ]
     },
     {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Progress bar built on Base UI with sm, md, lg size variants.",
+      "dependencies": ["@base-ui-components/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/progress/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "ScrollArea",
+      "description": "Scroll area built on Base UI with custom scrollbar styling.",
+      "dependencies": ["@base-ui-components/react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/scroll-area/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Select dropdown built on Base UI with default and ghost variants.",
+      "dependencies": ["@base-ui-components/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/select/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Horizontal or vertical separator line.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/separator/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "Slide-in panel from any edge (top, right, bottom, left). Built on Base UI Dialog.",
+      "dependencies": ["@base-ui-components/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/sheet/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "Full-featured sidebar with Provider, menus, groups, collapsible modes, and mobile support.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/sidebar/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Animated loading placeholder.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/skeleton/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "Sonner",
+      "description": "Toast notifications powered by Sonner with themed styling.",
+      "dependencies": ["sonner"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/sonner/sonner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "Loading spinner with sm, md, lg, xl size variants.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/spinner/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "switch",
       "type": "registry:ui",
       "title": "Switch",
@@ -207,6 +415,102 @@
       "files": [
         {
           "path": "registry/default/switch/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Data table with Header, Body, Row, Head, Cell, Footer, and Caption components.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/table/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Tabs component with line, pills, and boxed variants. Built on Base UI with size options.",
+      "dependencies": ["@base-ui-components/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/tabs/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Multiline text input with default and ghost variants.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/textarea/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "Toggle button built on Base UI with default and outline variants.",
+      "dependencies": ["@base-ui-components/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/toggle/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "ToggleGroup",
+      "description": "Group of toggle buttons with single or multiple selection. Built on Base UI.",
+      "dependencies": ["@base-ui-components/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/toggle-group/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Tooltip built on Base UI with fade animation and arrow support.",
+      "dependencies": ["@base-ui-components/react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/tooltip/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "visually-hidden",
+      "type": "registry:ui",
+      "title": "VisuallyHidden",
+      "description": "Hide content visually while keeping it accessible to screen readers.",
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/visually-hidden/visually-hidden.tsx",
           "type": "registry:ui"
         }
       ]
