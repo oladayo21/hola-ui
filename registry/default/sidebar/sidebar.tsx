@@ -361,8 +361,10 @@ const SidebarGroup = React.forwardRef<HTMLDivElement, SidebarGroupProps>(
 SidebarGroup.displayName = "SidebarGroup"
 
 // Group Label
+type RenderElement = React.ReactElement<{ className?: string; children?: React.ReactNode }>
+
 interface SidebarGroupLabelProps extends React.HTMLAttributes<HTMLDivElement> {
-  render?: React.ReactElement
+  render?: RenderElement
 }
 
 const SidebarGroupLabel = React.forwardRef<
@@ -375,7 +377,7 @@ const SidebarGroupLabel = React.forwardRef<
   )
 
   if (render) {
-    return React.cloneElement(render, {
+    return React.cloneElement(render as React.ReactElement, {
       ref,
       className: cn(labelClassName, render.props.className),
       ...props,
@@ -468,7 +470,7 @@ interface SidebarMenuButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof sidebarMenuButtonVariants> {
   isActive?: boolean
-  render?: React.ReactElement
+  render?: RenderElement
   tooltip?: { children: React.ReactNode }
 }
 
@@ -485,7 +487,7 @@ const SidebarMenuButton = React.forwardRef<
   )
 
   if (render) {
-    return React.cloneElement(render, {
+    return React.cloneElement(render as React.ReactElement, {
       ref,
       className: cn(buttonClassName, render.props.className),
       ...props,
@@ -523,7 +525,7 @@ SidebarMenuBadge.displayName = "SidebarMenuBadge"
 // Menu Action
 interface SidebarMenuActionProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  render?: React.ReactElement
+  render?: RenderElement
 }
 
 const SidebarMenuAction = React.forwardRef<
@@ -536,7 +538,7 @@ const SidebarMenuAction = React.forwardRef<
   )
 
   if (render) {
-    return React.cloneElement(render, {
+    return React.cloneElement(render as React.ReactElement, {
       ref,
       className: cn(actionClassName, render.props.className),
       ...props,

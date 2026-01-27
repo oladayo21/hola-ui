@@ -16,7 +16,7 @@ export interface InputOTPProps {
   autoFocus?: boolean
   pattern?: string
   inputMode?: "text" | "numeric"
-  children?: React.ReactNode
+  children: React.ReactNode
 }
 
 const InputOTP = React.forwardRef<
