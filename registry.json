@@ -196,6 +196,20 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Toggle switch built on Base UI with sm and md size variants.",
+      "dependencies": ["@base-ui-components/react", "class-variance-authority"],
+      "registryDependencies": ["utils"],
+      "files": [
+        {
+          "path": "registry/default/switch/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
