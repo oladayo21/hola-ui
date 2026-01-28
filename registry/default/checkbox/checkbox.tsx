@@ -1,10 +1,10 @@
 import * as React from "react"
-import { Checkbox as CheckboxPrimitive } from "@base-ui-components/react/checkbox"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
+import { IconCheck } from "@tabler/icons-react"
 
 const checkboxVariants = cva(
-  "peer shrink-0 rounded-sm border border-border bg-muted transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[checked]:bg-primary data-[checked]:border-primary data-[checked]:text-primary-foreground",
+  "inline-flex shrink-0 items-center justify-center rounded-sm border border-border bg-muted transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
   {
     variants: {
       size: {
@@ -19,48 +19,44 @@ const checkboxVariants = cva(
   }
 )
 
-const indicatorVariants = cva(
-  "flex items-center justify-center text-current",
-  {
-    variants: {
-      size: {
-        sm: "[&>svg]:h-2.5 [&>svg]:w-2.5",
-        md: "[&>svg]:h-3 [&>svg]:w-3",
-        lg: "[&>svg]:h-3.5 [&>svg]:w-3.5",
-      },
+const checkIconVariants = cva("", {
+  variants: {
+    size: {
+      sm: "h-2.5 w-2.5",
+      md: "h-3 w-3",
+      lg: "h-3.5 w-3.5",
     },
-    defaultVariants: {
-      size: "md",
-    },
-  }
-)
+  },
+  defaultVariants: {
+    size: "md",
+  },
+})
 
 export interface CheckboxProps
-  extends Omit<React.ComponentProps<typeof CheckboxPrimitive.Root>, "children">,
-    VariantProps<typeof checkboxVariants> {}
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onChange">,
+    VariantProps<typeof checkboxVariants> {
+  checked?: boolean
+  onCheckedChange?: (checked: boolean) => void
+}
 
 const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
-  ({ className, size, ...props }, ref) => {
+  ({ className, size, checked, onCheckedChange, ...props }, ref) => {
     return (
-      <CheckboxPrimitive.Root
+      <button
         ref={ref}
-        className={cn(checkboxVariants({ size, className }))}
+        type="button"
+        role="checkbox"
+        aria-checked={checked}
+        data-state={checked ? "checked" : "unchecked"}
+        className={cn(
+          checkboxVariants({ size, className }),
+          checked && "bg-primary border-primary text-primary-foreground"
+        )}
+        onClick={() => onCheckedChange?.(!checked)}
         {...props}
       >
-        <CheckboxPrimitive.Indicator className={cn(indicatorVariants({ size }))}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polyline points="20 6 9 17 4 12" />
-          </svg>
-        </CheckboxPrimitive.Indicator>
-      </CheckboxPrimitive.Root>
+        {checked && <IconCheck className={cn(checkIconVariants({ size }))} strokeWidth={3} />}
+      </button>
     )
   }
 )

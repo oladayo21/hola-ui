@@ -131,8 +131,8 @@
       "name": "checkbox",
       "type": "registry:ui",
       "title": "Checkbox",
-      "description": "Checkbox built on Base UI with sm, md, lg size variants.",
-      "dependencies": ["@base-ui-components/react", "class-variance-authority"],
+      "description": "Simple checkbox with sm, md, lg size variants.",
+      "dependencies": ["@tabler/icons-react", "class-variance-authority"],
       "registryDependencies": ["utils"],
       "files": [
         {
