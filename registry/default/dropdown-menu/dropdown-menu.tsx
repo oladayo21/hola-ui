@@ -73,7 +73,7 @@ const DropdownMenuItem = React.forwardRef<
     <MenuPrimitive.Item
       ref={ref}
       className={cn(
-        "relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-[13px] outline-none",
+        "relative flex cursor-pointer select-none items-center gap-2 rounded-sm px-2 py-1.5 text-[13px] outline-none",
         "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         variant === "default" && "text-foreground hover:bg-muted focus:bg-muted",
         variant === "destructive" && "text-destructive hover:bg-destructive/10 focus:bg-destructive/10",

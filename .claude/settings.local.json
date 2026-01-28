@@ -6,7 +6,9 @@
       "Bash(gh issue list:*)",
       "Bash(pnpm tsc:*)",
       "Bash(pnpm build:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(gh issue close:*)",
+      "WebFetch(domain:ui.shadcn.com)"
     ]
   }
 }
